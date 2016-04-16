@@ -34,7 +34,11 @@ class Commande
      * @ORM\Column(name="etat", type="boolean")
      */
     private $etat;
-
+/**
+     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Produit", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Commande")
+     *  @ORM\JoinColumn(name="idproduit", referencedColumnName="id")
+     */
+    private $idproduit;
 
     /**
      * Get id
@@ -91,4 +95,13 @@ class Commande
     {
         return $this->etat;
     }
+    function getIdproduit() {
+        return $this->idproduit;
+    }
+
+    function setIdproduit($idproduit) {
+        $this->idproduit = $idproduit;
+    }
+
+
 }

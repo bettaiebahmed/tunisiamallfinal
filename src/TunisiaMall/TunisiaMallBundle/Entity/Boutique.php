@@ -48,6 +48,11 @@ class Boutique
      * @ORM\Column(name="mail", type="string", length=255)
      */
     private $mail;
+    /**
+     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Media", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Boutique")
+     *  @ORM\JoinColumn(name="image", referencedColumnName="id")
+     */
+    private $image;
 
 
     /**
@@ -93,6 +98,17 @@ class Boutique
     {
         $this->tel = $tel;
 
+        return $this;
+    }
+    /**
+     * Set image
+     *
+     * @param \TunisiaMall\TunisiaMallBundle\Entity\Media $image
+     * @return Produits
+     */
+    public function setImage(\TunisiaMall\TunisiaMallBundle\Entity\Media $image)
+    {
+        $this->image = $image;
         return $this;
     }
 
@@ -151,4 +167,14 @@ class Boutique
     {
         return $this->mail;
     }
+       /**
+     * Get image
+     *
+     * @return \TunisiaMall\TunisiaMallBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
 }
