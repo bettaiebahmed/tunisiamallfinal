@@ -1,0 +1,3 @@
+tunisia_mall_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: TunisiaMallBundle:Default:index }
