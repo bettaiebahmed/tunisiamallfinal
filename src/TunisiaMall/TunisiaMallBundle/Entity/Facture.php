@@ -34,6 +34,17 @@ class Facture
      * @ORM\Column(name="totale", type="float")
      */
     private $totale;
+    /**
+     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Produit", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Facture")
+     *  @ORM\JoinColumn(name="idproduit", referencedColumnName="id")
+     */
+    private $idproduit;
+    /**
+     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Commande", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Facture")
+     *  @ORM\JoinColumn(name="idcomd", referencedColumnName="id")
+     */
+    private $idcomd;
+    
 
 
     /**
@@ -81,8 +92,23 @@ class Facture
 
         return $this;
     }
+    function getIdproduit() {
+        return $this->idproduit;
+    }
 
-    /**
+    function getIdcomd() {
+        return $this->idcomd;
+    }
+
+    function setIdproduit($idproduit) {
+        $this->idproduit = $idproduit;
+    }
+
+    function setIdcomd($idcomd) {
+        $this->idcomd = $idcomd;
+    }
+
+        /**
      * Get totale
      *
      * @return float 
@@ -91,4 +117,5 @@ class Facture
     {
         return $this->totale;
     }
+    
 }
