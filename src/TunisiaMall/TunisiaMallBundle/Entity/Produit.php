@@ -41,29 +41,13 @@ class Produit
      * @ORM\Column(name="Description", type="string", length=255)
      */
     private $description;
-    /*  @ORM\OneToOne(targetEntity="Categorie", cascade={"remove"})
-     * @ORM\JoinColumn(name="id_cat", referencedColumnName="id", onDelete="CASCADE"
-      * 
-     
-      */
-    private $id_cat;
-    /**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Enseigne", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Produit")
-     *  @ORM\JoinColumn(name="idenseigne", referencedColumnName="id")
-     */
-    private $idenseigne;
+
     /**
      * @var integer
      *
      * @ORM\Column(name="QuantiteStock", type="integer")
      */
-    
     private $quantiteStock;
-    /**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Media", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Produit")
-     *  @ORM\JoinColumn(name="image", referencedColumnName="id")
-     */
-    private $image;
 
     /**
      * @var float
@@ -128,8 +112,7 @@ class Produit
     {
         return $this->nomProduit;
     }
-     
-    
+
     /**
      * Set description
      *
@@ -198,41 +181,4 @@ class Produit
     {
         return $this->prix;
     }
-    /**
-     * Set image
-     *
-     * @param \TunisiaMall\TunisiaMallBundle\Entity\Media $image
-     * @return Produits
-     */
-    public function setImage(\TunisiaMall\TunisiaMallBundle\Entity\Media $image)
-    {
-        $this->image = $image;
-        return $this;
-    }
-    function getId_cat() {
-        return $this->id_cat;
-    }
-
-    function getIdenseigne() {
-        return $this->idenseigne;
-    }
-
-    function setId_cat($id_cat) {
-        $this->id_cat = $id_cat;
-    }
-
-    function setIdenseigne($idenseigne) {
-        $this->idenseigne = $idenseigne;
-    }
-
-           /**
-     * Get image
-     *
-     * @return \TunisiaMall\AdminBundle\Entity\Media 
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-    
 }

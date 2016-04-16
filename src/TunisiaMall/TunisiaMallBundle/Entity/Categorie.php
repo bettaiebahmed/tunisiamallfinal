@@ -91,5 +91,4 @@ class Categorie
     {
         return $this->type;
     }
-    
 }

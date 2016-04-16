@@ -41,11 +41,7 @@ class CarteFidelite
      * @ORM\Column(name="nbrePoint", type="integer")
      */
     private $nbrePoint;
-/**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Boutique", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\CarteFidelite")
-     *  @ORM\JoinColumn(name="idboutique", referencedColumnName="id")
-     */
-    private $idboutique;
+
 
     /**
      * Get id
@@ -125,13 +121,4 @@ class CarteFidelite
     {
         return $this->nbrePoint;
     }
-    function getIdboutique() {
-        return $this->idboutique;
-    }
-
-    function setIdboutique($idboutique) {
-        $this->idboutique = $idboutique;
-    }
-
-
 }

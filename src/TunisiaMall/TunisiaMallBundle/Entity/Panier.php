@@ -27,11 +27,7 @@ class Panier
      * @ORM\Column(name="nbreProduit", type="integer")
      */
     private $nbreProduit;
-/**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Produit", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Panier")
-     *  @ORM\JoinColumn(name="idproduit", referencedColumnName="id")
-     */
-    private $idproduit;
+
 
     /**
      * Get id
@@ -65,13 +61,4 @@ class Panier
     {
         return $this->nbreProduit;
     }
-    function getIdproduit() {
-        return $this->idproduit;
-    }
-
-    function setIdproduit($idproduit) {
-        $this->idproduit = $idproduit;
-    }
-
-
 }
