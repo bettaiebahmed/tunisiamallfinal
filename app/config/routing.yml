@@ -1,3 +1,7 @@
+tunisia_mall_administration:
+    resource: "@TunisiaMallAdministrationBundle/Resources/config/routing.yml"
+    prefix:   /
+
 tunisia_mall:
     resource: "@TunisiaMallBundle/Resources/config/routing.yml"
     prefix:   /

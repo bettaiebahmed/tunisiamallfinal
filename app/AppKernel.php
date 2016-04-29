@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new TunisiaMall\TunisiaMallBundle\TunisiaMallBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new TunisiaMall\AdministrationBundle\TunisiaMallAdministrationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

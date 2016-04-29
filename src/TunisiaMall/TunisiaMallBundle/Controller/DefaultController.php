@@ -16,6 +16,7 @@ class DefaultController extends Controller
                 ? $this->get('form.csrf_provider')->generateCsrfToken('authenticate')
                 : null;
         }
+        
         return $this->render('TunisiaMallBundle:Default:index.html.twig',array('csrf_token'=>$csrfToken));
     }
 }
