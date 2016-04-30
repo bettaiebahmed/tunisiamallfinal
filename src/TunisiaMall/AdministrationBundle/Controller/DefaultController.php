@@ -14,4 +14,8 @@ class DefaultController extends Controller
     {
         return $this->render('TunisiaMallAdministrationBundle::responsable.html.twig');
     }
+     public function administrateurAction()
+    {
+        return $this->render('TunisiaMallAdministrationBundle::administrateur.html.twig');
+    }
 }

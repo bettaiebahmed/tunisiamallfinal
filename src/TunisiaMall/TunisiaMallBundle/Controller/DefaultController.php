@@ -16,11 +16,21 @@ class DefaultController extends Controller
                 ? $this->get('form.csrf_provider')->generateCsrfToken('authenticate')
                 : null;
         }
-        if ($this->get('security.context')->isGranted('ROLE_BRAND')) {
 
-            return $this->render('AdministrationBundle:Default:index.html.twig');
+if( $this->container->get('security.context')->isGranted('ROLE_ADMIN') ){
+
+return $this->redirect($this->generateUrl('administrateur'));
             
         }
-        return $this->render('TunisiaMallBundle:Default:index.html.twig',array('csrf_token'=>$csrfToken));
+        else if( $this->container->get('security.context')->isGranted('ROLE_RESPONSABLE') )
+        {
+            return $this->redirect($this->generateUrl('responsable'));
+
+        }
+        else
+        {
+                    return $this->render('TunisiaMallBundle:Default:index.html.twig',array('csrf_token'=>$csrfToken));
+
+        }
     }
 }
