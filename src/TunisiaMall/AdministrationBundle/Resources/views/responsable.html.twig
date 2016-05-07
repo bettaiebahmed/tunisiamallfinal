@@ -1,1 +1,29 @@
-kdf
+{% extends 'TunisiaMallAdministrationBundle:Default:layout.html.twig' %}
+{% block title %} <title>Interface Responsable</title>{%endblock%} 
+{% block photo_admin %}<img src="{{asset('images/responsable.png')}}"/>{% endblock %}
+{% block deuxieme_photo %} <img src="{{asset('images/responsable.png')}}"/>{%endblock %}
+{% block navigation %} <li class="active">
+        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+    </li>
+    <li class="xn-openable">
+        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Gestion de Stock</span></a>
+        <ul>
+            <li><a href=""><span class="fa fa-image"></span> Ajouter</a></li>
+            <li><a href=""><span class="fa fa-user"></span> Consulter</a></li>
+            <li><a href=""><span class="fa fa-users"></span> Supprimer</a></li>
+
+        </ul>
+    </li>
+    <li>
+        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Publicité</span></a>                        
+    </li>
+    <li class="xn-openable">
+        <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Fidélisation</span></a>
+        <ul>
+
+            <li><a href="/tunisiamallproject/web/app_dev.php/AjouterCarteFid">Ajouter une carte de fidélité</a></li>
+            <li><a href="/tunisiamallproject/web/app_dev.php/AttribuerPoint">Consulter/Attribuer des points</a></li>
+        </ul>
+    </li>
+{% endblock %}
+{% block emplacement %} <li class="active">Tableau de board</li>{%endblock%}

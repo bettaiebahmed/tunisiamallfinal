@@ -41,6 +41,12 @@ class Produit
      * @ORM\Column(name="Description", type="string", length=255)
      */
     private $description;
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="TypeProduit", type="string", length=255)
+     */
+    private $typeProduit;
     /*  @ORM\OneToOne(targetEntity="Categorie", cascade={"remove"})
      * @ORM\JoinColumn(name="id_cat", referencedColumnName="id", onDelete="CASCADE"
       * 
@@ -71,6 +77,12 @@ class Produit
      * @ORM\Column(name="prix", type="float")
      */
     private $prix;
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prixGros", type="float")
+     */
+    private $prixGros;
 
 
     /**
@@ -234,5 +246,21 @@ class Produit
     {
         return $this->image;
     }
-    
+    function getPrixGros() {
+        return $this->prixGros;
+    }
+
+    function setPrixGros($prixGros) {
+        $this->prixGros = $prixGros;
+    }
+    function getTypeProduit() {
+        return $this->typeProduit;
+    }
+
+    function setTypeProduit($typeProduit) {
+        $this->typeProduit = $typeProduit;
+    }
+
+
+
 }
