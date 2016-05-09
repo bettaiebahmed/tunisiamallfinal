@@ -1,26 +1,33 @@
 <?php
 
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use TunisiaMall\AdminBundle\Form\MediaType;
+use TunisiaMall\AdministrationBundle\Form\MediaType;
 
 class ajoutArticle extends AbstractType {
 
     public function buildForm(FormBuilderInterface
     $builder, array $options) {
         $builder
-                ->add('nomArticle')
-                ->add('prixAchat')
-                ->add('prixVenteDetail')
-                ->add('prixVenteGros')
-                ->add('typeArticle','choice', array(
-    'choices' => array('Homme' => 'Homme', 'Femme' => 'Femme'),
-    'preferred_choices' => array('Selectionner votre Sex'),
-))
-                ->add('genreArticle')
-                ->add('qte')
+                ->add('ref')
+                ->add('nomProduit')
+                ->add('Description')
+                ->add('typeProduit')
+                ->add('prixdetaille')
+                ->add('nom_categorie', 'entity',
+                    array('property' => 'nom',
+                        'class' => 'TunisiaMallBundle:Categorie',
+                        'multiple'     => false,
+            'expanded'     => false,
+            'required' => false))
+               
+                ->add('idenseigne')
+                ->add('quantiteStock')
+                ->add('prix')
+                ->add('prixGros')
+               
                 ->add('image', new MediaType())
                 ->add('Ajouter', 'submit');
     }

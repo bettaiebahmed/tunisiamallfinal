@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="TunisiaMall\TunisiaMallBundle\Entity\ProduitRepository")
  */
 class Produit
 {
@@ -20,6 +21,14 @@ class Produit
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idenseigne", type="integer")
+     * 
+     * 
+     */
+    private $idenseigne;
 
     /**
      * @var string
@@ -27,6 +36,12 @@ class Produit
      * @ORM\Column(name="ref", type="string", length=255)
      */
     private $ref;
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_categorie", type="string", length=255)
+     */
+    private $nom_categorie;
 
     /**
      * @var string
@@ -47,23 +62,18 @@ class Produit
      * @ORM\Column(name="TypeProduit", type="string", length=255)
      */
     private $typeProduit;
-    /*  @ORM\OneToOne(targetEntity="Categorie", cascade={"remove"})
-     * @ORM\JoinColumn(name="id_cat", referencedColumnName="id", onDelete="CASCADE"
-      * 
-     
-      */
-    private $id_cat;
     /**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Enseigne", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Produit")
-     *  @ORM\JoinColumn(name="idenseigne", referencedColumnName="id")
+     * @var float
+     *
+     * @ORM\Column(name="prixdetaille", type="float")
      */
-    private $idenseigne;
+    private $prixdetaille;
+ 
     /**
      * @var integer
      *
      * @ORM\Column(name="QuantiteStock", type="integer")
      */
-    
     private $quantiteStock;
     /**
      * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Media", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\Produit")
@@ -221,16 +231,16 @@ class Produit
         $this->image = $image;
         return $this;
     }
-    function getId_cat() {
-        return $this->id_cat;
+    function getnomCategorie() {
+        return $this->nom_categorie;
     }
 
     function getIdenseigne() {
         return $this->idenseigne;
     }
 
-    function setId_cat($id_cat) {
-        $this->id_cat = $id_cat;
+    function setnomcategorie($nom_categorie) {
+        $this->nom_categorie = $nom_categorie;
     }
 
     function setIdenseigne($idenseigne) {
@@ -240,7 +250,7 @@ class Produit
            /**
      * Get image
      *
-     * @return \TunisiaMall\AdminBundle\Entity\Media 
+     * @return \TunisiaMall\TunisiaMallBundle\Entity\Media 
      */
     public function getImage()
     {
@@ -260,6 +270,15 @@ class Produit
     function setTypeProduit($typeProduit) {
         $this->typeProduit = $typeProduit;
     }
+    function getPrixdetaille() {
+        return $this->prixdetaille;
+    }
+
+    function setPrixdetaille($prixdetaille) {
+        $this->prixdetaille = $prixdetaille;
+    }
+
+
 
 
 

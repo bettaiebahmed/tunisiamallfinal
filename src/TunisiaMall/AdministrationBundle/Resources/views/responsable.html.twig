@@ -8,9 +8,10 @@
     <li class="xn-openable">
         <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Gestion de Stock</span></a>
         <ul>
-            <li><a href=""><span class="fa fa-image"></span> Ajouter</a></li>
-            <li><a href=""><span class="fa fa-user"></span> Consulter</a></li>
-            <li><a href=""><span class="fa fa-users"></span> Supprimer</a></li>
+            <li><a href="{{path('ajouter_produit')}}"><span class="fa fa-image"></span> Ajouter</a></li>
+            <li class="active"><a href="{{path('_afficher_produit')}}"><span class="fa fa-user"></span> Consulter</a></li>
+            <li><a href="{{path('_recherche_article')}}"><span class="fa fa-users"></span> Rechercher</a></li>
+
 
         </ul>
     </li>
@@ -21,8 +22,8 @@
         <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Fidélisation</span></a>
         <ul>
 
-            <li><a href="/tunisiamallproject/web/app_dev.php/AjouterCarteFid">Ajouter une carte de fidélité</a></li>
-            <li><a href="/tunisiamallproject/web/app_dev.php/AttribuerPoint">Consulter/Attribuer des points</a></li>
+            <li><a href="/TunisiaMallV2/web/app_dev.php/AjoutCarte">Ajouter une carte de fidélité</a></li>
+            <li><a href="/TunisiaMallV2/web/app_dev.php/ConsulterModify">Consulter/Attribuer des points</a></li>
         </ul>
     </li>
 {% endblock %}

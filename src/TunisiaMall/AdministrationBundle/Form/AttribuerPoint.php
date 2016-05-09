@@ -1,5 +1,5 @@
 <?php
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 class AttribuerPoint extends AbstractType {
@@ -7,7 +7,7 @@ class AttribuerPoint extends AbstractType {
     public function buildForm(FormBuilderInterface
     $builder, array $options) {
         $builder
-                ->add('nbPoint')
+                ->add('nbrePoint')
                 
                 ->add('Modifier', 'submit');
     }

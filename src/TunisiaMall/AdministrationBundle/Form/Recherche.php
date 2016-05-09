@@ -1,6 +1,6 @@
 <?php
 
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,7 +11,7 @@ class Recherche extends AbstractType {
     public function buildForm(FormBuilderInterface
     $builder, array $options) {
         $builder
-                ->add('nomArticle')
+                ->add('nomProduit')
                 
                 ->add('Recherche', 'submit');
     }

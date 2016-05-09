@@ -1,5 +1,5 @@
 <?php
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 class AjoutCarteFid extends AbstractType {
@@ -7,13 +7,14 @@ class AjoutCarteFid extends AbstractType {
     public function buildForm(FormBuilderInterface
     $builder, array $options) {
         $builder
-                ->add('numCarte')
+                ->add('num')
                 ->add('validite')
-                ->add('nbPoint')
+                ->add('nbrePoint')
+                ->add('idboutique')
                 ->add('Ajouter', 'submit');
     }
 
     public function getName() {
-        return 'nom';
+        return 'CarteFidelite';
     }
 }

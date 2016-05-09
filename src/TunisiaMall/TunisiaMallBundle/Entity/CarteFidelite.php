@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="TunisiaMall\TunisiaMallBundle\Entity\CarteFideliteRepository")
  */
 class CarteFidelite
 {
@@ -41,9 +42,11 @@ class CarteFidelite
      * @ORM\Column(name="nbrePoint", type="integer")
      */
     private $nbrePoint;
-/**
-     * @ORM\OneToOne(targetEntity="TunisiaMall\TunisiaMallBundle\Entity\Boutique", cascade={"persist","remove"},mappedBy="TunisiaMall\TunisiaMallBundle\Entity\CarteFidelite")
-     *  @ORM\JoinColumn(name="idboutique", referencedColumnName="id")
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idboutique", type="string")
      */
     private $idboutique;
 

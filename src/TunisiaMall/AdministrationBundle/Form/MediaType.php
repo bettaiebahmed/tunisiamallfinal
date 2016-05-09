@@ -1,5 +1,5 @@
 <?php
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -22,7 +22,7 @@ class MediaType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'TunisiaMall\AdminBundle\Entity\Media'
+            'data_class' => 'TunisiaMall\TunisiaMallBundle\Entity\Media'
         ));
     }
     /**

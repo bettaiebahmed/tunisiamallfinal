@@ -1,6 +1,6 @@
 <?php
 
-namespace TunisiaMall\AdminBundle\Form;
+namespace TunisiaMall\AdministrationBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,13 +11,12 @@ class modifArticle extends AbstractType {
     public function buildForm(FormBuilderInterface
     $builder, array $options) {
         $builder
-                ->add('nomArticle')
-                ->add('prixAchat')
-                ->add('prixVenteDetail')
-                ->add('prixVenteGros')
-                ->add('typeArticle')
-                ->add('genreArticle')
-                ->add('qte')
+                ->add('nomProduit')
+                ->add('Description')
+                ->add('typeProduit')
+                ->add('quantiteStock')
+                ->add('prix')
+                
 
                 ->add('Modifier', 'submit');
     }

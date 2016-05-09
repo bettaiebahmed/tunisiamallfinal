@@ -91,5 +91,12 @@ class Categorie
     {
         return $this->type;
     }
-    
+/**
+ * toString
+ * @return string
+ */
+public function __toString() 
+{
+    return $this->getNom();
+}
 }
