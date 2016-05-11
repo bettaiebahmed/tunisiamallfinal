@@ -29,7 +29,7 @@ class ProduitController extends Controller
     public function AfficherProduitAction()
     {
         $user = $this->get('security.context')->getToken()->getUser();
-$userId = $user->getId();
+        $userId = $user->getId();
 
          $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('TunisiaMallBundle:Produit')->search($userId);

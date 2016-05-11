@@ -5,6 +5,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
 * @ORM\Entity
 * @ORM\Table(name="fos_user")
+ *@ORM\Entity(repositoryClass="TunisiaMall\TunisiaMallBundle\Entity\UserRepository")
+
 */
 class User extends BaseUser
 {
@@ -29,6 +31,11 @@ private $prenom;
 * 
 */
 private $boutique; 
+/**
+* @ORM\Column(type="string")
+* 
+*/
+private $valide="Invalide"; 
 
 public function __construct()
 {
@@ -57,6 +64,14 @@ function setPrenom($prenom) {
 
 function setBoutique($boutique) {
     $this->boutique = $boutique;
+}
+
+function getValide() {
+    return $this->valide;
+}
+
+function setValide($valide) {
+    $this->valide = $valide;
 }
 
 

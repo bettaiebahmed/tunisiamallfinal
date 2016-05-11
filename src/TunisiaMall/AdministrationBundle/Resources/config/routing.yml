@@ -46,3 +46,21 @@ _recherche_article:
 resultat:
     path:     /resultat
     defaults: { _controller: TunisiaMallAdministrationBundle:Produit:resultat }
+
+_valider_responsable:
+    path:     /ValiderResponsable
+    defaults: { _controller: TunisiaMallAdministrationBundle:GestionComptes:ValiderResponsable }
+
+_valider_client:
+    path:     /ValiderClient
+    defaults: { _controller: TunisiaMallAdministrationBundle:GestionComptes:ValiderClient }
+
+_supprimer_compte:
+    path:     /SupprimerCompte
+    defaults: { _controller: TunisiaMallAdministrationBundle:GestionComptes:SupprimerCompte }
+valider_client:
+    path:     /valider_client{id}
+    defaults: { _controller: TunisiaMallAdministrationBundle:GestionComptes:valider_client }
+refuser_client:
+    path:     /refuser_client{id}
+    defaults: { _controller: TunisiaMallAdministrationBundle:GestionComptes:refuser_client }

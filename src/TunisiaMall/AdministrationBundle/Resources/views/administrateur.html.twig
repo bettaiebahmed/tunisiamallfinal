@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+{% extends 'TunisiaMallAdministrationBundle:Default:layout.html.twig' %}
+{% block title %} <title>Interface Administrateur</title>{%endblock%} 
+{% block photo_admin %}<img src="{{asset('images/admin.png')}}"/>{% endblock %}
+{% block deuxieme_photo %} <img src="{{asset('images/admin.png')}}"/>{%endblock %}
+{% block navigation %} <li class="active">
+        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+    </li>
+    <li class="xn-openable">
+        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Gestion des comptes</span></a>
+        <ul>
+            <li><a href="{{path('ajouter_produit')}}"><span class="fa fa-image"></span> Valider responsable</a></li>
+            <li class="active"><a href="{{path('_valider_client')}}"><span class="fa fa-user"></span> Valider Client</a></li>
+            <li><a href="{{path('_recherche_article')}}"><span class="fa fa-users"></span> Supprimer un compte</a></li>
+
+
+        </ul>
+    </li>
+     <li class="xn-openable">
+        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Gestion des pack publicitaire</span></a>
+        <ul>
+            <li><a href="{{path('ajouter_produit')}}"><span class="fa fa-image"></span> Créer un pack</a></li>
+            <li class="active"><a href="{{path('_afficher_produit')}}"><span class="fa fa-user"></span> Modifier un pack</a></li>
+            <li><a href="{{path('_recherche_article')}}"><span class="fa fa-users"></span> Supprimer un pack</a></li>
+          <li><a href="{{path('_recherche_article')}}"><span class="fa fa-users"></span> Définir la zone publicitaire</a></li>
+
+
+        </ul>
+    </li>
+     <li class="xn-openable">
+        <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Achat Catalogue</span></a>
+        <ul>
+            <li><a href="{{path('ajouter_produit')}}"><span class="fa fa-image"></span> Générer le catalogue général</a></li>
+            <li class="active"><a href="{{path('_afficher_produit')}}"><span class="fa fa-user"></span> Publier un catalogue</a></li>
+          
+
+        </ul>
+    </li>
+   
+{% endblock %}
+{% block emplacement %} <li class="active">Tableau de board</li>{%endblock%}
