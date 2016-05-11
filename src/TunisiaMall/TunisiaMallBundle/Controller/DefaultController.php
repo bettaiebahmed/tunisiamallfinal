@@ -67,7 +67,8 @@ return $this->redirect($this->generateUrl('administrateur'));
        
             
             
-         } else {
+         } 
+         else {
             // BC for SF < 2.4
             $csrfToken = $this->has('form.csrf_provider')
                 ? $this->get('form.csrf_provider')->generateCsrfToken('authenticate')
