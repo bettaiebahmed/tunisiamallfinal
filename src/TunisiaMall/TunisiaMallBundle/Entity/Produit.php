@@ -24,7 +24,7 @@ class Produit
     /**
      * @var integer
      *
-     * @ORM\Column(name="idenseigne", type="integer")
+     * @ORM\Column(name="idenseigne", type="string")
      * 
      * 
      */

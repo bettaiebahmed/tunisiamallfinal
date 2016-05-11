@@ -23,7 +23,12 @@ class ajoutArticle extends AbstractType {
             'expanded'     => false,
             'required' => false))
                
-                ->add('idenseigne')
+                ->add('idenseigne','entity',
+                    array('property' => 'nom',
+                        'class' => 'TunisiaMallBundle:Enseigne',
+                        'multiple'     => false,
+            'expanded'     => false,
+            'required' => false))
                 ->add('quantiteStock')
                 ->add('prix')
                 ->add('prixGros')
