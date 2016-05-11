@@ -13,3 +13,15 @@
 /vendor/friendsofsymfony/user-bundle/Tests/
 /vendor/friendsofsymfony/user-bundle/Validator/
 /vendor/friendsofsymfony/user-bundle/Util/
+/vendor/twig/
+/vendor/sensio/
+/vendor/kriswallsmith/
+/vendor/swiftmailer/
+/vendor/monolog/
+/vendor/psr/
+/vendor/incenteev/
+/vendor/symfony/
+/vendor/sensiolabs/
+/vendor/paragonie/
+/vendor/jdorn/
+/vendor/
