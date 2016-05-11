@@ -3,6 +3,8 @@
 namespace TunisiaMall\AdministrationBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use TunisiaMall\TunisiaMallBundle\Entity\Statistique;
+
 
 class DefaultController extends Controller
 {
@@ -16,6 +18,13 @@ class DefaultController extends Controller
     }
      public function administrateurAction()
     {
-        return $this->render('TunisiaMallAdministrationBundle::administrateur.html.twig');
+         $statistique=new Statistique();
+       $em=$this->getDoctrine()->getManager(); 
+       $statistique=$em->getRepository('TunisiaMallBundle:Statistique')->findAll();
+        $em=$this->getDoctrine()->getManager(); 
+       $usernumber=$em->getRepository('TunisiaMallBundle:User')->getUserNumber()-1;
+       
+        
+        return $this->render('TunisiaMallAdministrationBundle::administrateur.html.twig', array('statistique'=>$statistique,'usernumber'=>$usernumber));
     }
 }

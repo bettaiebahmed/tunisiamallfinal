@@ -28,4 +28,11 @@ class UserRepository extends EntityRepository
          $query->execute();
 
     }
+     public function getUserNumber()
+    {
+  return $this->createQueryBuilder('TunisiaMallBundle:User')
+ ->select('COUNT(TunisiaMallBundle:User)')
+ ->getQuery()
+ ->getSingleScalarResult();
+    }
 }

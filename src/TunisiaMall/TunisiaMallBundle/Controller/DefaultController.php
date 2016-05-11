@@ -11,7 +11,7 @@ class DefaultController extends Controller
         
          if ($this->has('security.csrf.token_manager')) {
             $csrfToken = $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue();
-       
+         
             
             
          } else {
@@ -42,6 +42,8 @@ return $this->redirect($this->generateUrl('administrateur'));
         
           if ($validite=="valide")
           {
+              $stat = new Stat();
+        $stat->compter();
         return $this->render('TunisiaMallBundle:Default:index.html.twig',array('csrf_token'=>$csrfToken));
 
           }
@@ -51,6 +53,8 @@ return $this->redirect($this->generateUrl('administrateur'));
               die();
           }
         }
+        $stat = new Stat();
+        $stat->compter();
                 return $this->render('TunisiaMallBundle:Default:index.html.twig',array('csrf_token'=>$csrfToken));
 
     }
@@ -89,10 +93,12 @@ return $this->redirect($this->generateUrl('administrateur'));
             $user = $this->get('security.context')->getToken()->getUser();
         $validite = $user->getValide();
         
+        
           if ($validite=="valide")
           {
         return $this->render('TunisiaMallBundle:Default:contact.html.twig',array('csrf_token'=>$csrfToken));
-
+         $stat = new Stat();
+        $stat->compter();
           }
           else if ($validite=="refuser")
           {
