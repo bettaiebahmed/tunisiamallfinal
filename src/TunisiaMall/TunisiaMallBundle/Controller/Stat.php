@@ -36,7 +36,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 }
-dfjkghdkfhgjdf;
+
 
 
 $cnx = mysql_connect( "localhost", "root", "" );
