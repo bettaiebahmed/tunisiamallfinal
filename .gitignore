@@ -1,3 +1,15 @@
 /app/cache/
 /app/logs/
-/vendor/
+/vendor/doctrine/
+/vendor/composer/
+/vendor/friendsofsymfony/user-bundle/Command/
+/vendor/friendsofsymfony/user-bundle/Doctrine/
+/vendor/friendsofsymfony/user-bundle/DependencyInjection/
+/vendor/friendsofsymfony/user-bundle/EventListener/
+/vendor/friendsofsymfony/user-bundle/Event/
+/vendor/friendsofsymfony/user-bundle/Controller/
+/vendor/friendsofsymfony/user-bundle/Model/
+/vendor/friendsofsymfony/user-bundle/Propel/
+/vendor/friendsofsymfony/user-bundle/Tests/
+/vendor/friendsofsymfony/user-bundle/Validator/
+/vendor/friendsofsymfony/user-bundle/Util/
