@@ -15,7 +15,7 @@ class ProduitRepository extends EntityRepository {
     public function search($idenseigne) {
 
         $query = $this->createQueryBuilder('TunisiaMallBundle:Media')
-                ->select('a.id,a.ref,a.nomProduit,a.description,a.nom_categorie,a.typeProduit,a.quantiteStock,a.prix,a.prixGros,m.path')
+                ->select('a.id,a.ref,a.nomProduit,a.description,a.idenseigne,a.nom_categorie,a.typeProduit,a.quantiteStock,a.prix,a.prixGros,m.path')
                 ->distinct()
                 ->from('TunisiaMallBundle:Produit', 'a')
                 
@@ -52,7 +52,7 @@ class ProduitRepository extends EntityRepository {
      public function search_nom_article($nomProduit) {
 
         $query = $this->createQueryBuilder('TunisiaMallBundle:Media')
-                ->select('a.id,a.ref,a.nomProduit,a.description,a.nom_categorie,a.typeProduit,a.quantiteStock,a.prix,a.prixGros,m.path')
+                ->select('a.id,a.ref,a.nomProduit,a.description,a.idenseigne,a.nom_categorie,a.typeProduit,a.quantiteStock,a.prix,a.prixGros,m.path')
                 ->distinct()
                 ->from('TunisiaMallBundle:Produit', 'a')
                 ->join('a.image', 'm')

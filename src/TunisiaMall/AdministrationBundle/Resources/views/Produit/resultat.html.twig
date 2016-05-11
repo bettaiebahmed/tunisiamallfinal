@@ -151,7 +151,10 @@ tbody:hover tr:hover td {
                       <th>Image</th>
                     <th>Nom Article</th>
                      <th>Type d'article</th>
+                                          <th>Enseigne</th>
+
                     <th>Categorie de l'article</th>
+                    
                     <th>Qutantite</th>
 
                     <th>Opération</th>
@@ -164,6 +167,8 @@ tbody:hover tr:hover td {
                          <td><img src="{{asset('/TunisiaMallV2/web/uploads/'~a.path)}}" width="150" height="150"/></td>
                         <td><strong>{{a.nomProduit}}</strong></td>
                            <td>{{a.typeProduit}}</td>
+                                                      <td>{{a.idenseigne}}</td>
+
                         <td>{{a.nom_categorie}}</td>
                         <td>{{a.quantiteStock}}</td>
                        <td> <a href="{{ path('_modifier_article', {'id': a.id} )}}"><img src="{{asset('/tunisiamallproject/web/img/modify.png')}}" align="left" width="30" height="30"/></a>

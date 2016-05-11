@@ -36,7 +36,7 @@ _modifier_article:
     defaults: { _controller: TunisiaMallAdministrationBundle:Produit:ModifierArticle }
 
 _supprimer_article:
-    path:     /SupprimerArticle
+    path:     /SupprimerArticle{id}
     defaults: { _controller: TunisiaMallAdministrationBundle:Produit:SupprimerArticle }
 
 _recherche_article:
