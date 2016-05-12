@@ -30,7 +30,7 @@ return $this->redirect($this->generateUrl('administrateur'));
         else if( $this->container->get('security.context')->isGranted('ROLE_RESPONSABLE') && ($validite="valide") )
         {
             return $this->redirect($this->generateUrl('responsable'));
-  //ahmed
+
         }
         
        
@@ -67,8 +67,7 @@ return $this->redirect($this->generateUrl('administrateur'));
        
             
             
-         } 
-         else {
+         } else {
             // BC for SF < 2.4
             $csrfToken = $this->has('form.csrf_provider')
                 ? $this->get('form.csrf_provider')->generateCsrfToken('authenticate')
